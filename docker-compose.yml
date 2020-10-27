@@ -108,3 +108,18 @@ services:
           - node.role==manager
       restart_policy:
         condition: on-failure
+
+  app:
+    image: flask-prometheus
+    depends_on:
+      - prometheus
+    ports:
+      - 5000:5000
+    networks:
+      - monitor-net
+    deploy:
+      placement:
+        constraints:
+          - node.role==manager
+      restart_policy:
+        condition: on-failure

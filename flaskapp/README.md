@@ -1,0 +1,1 @@
+This flaskapp is a simples API to export prometheus custom metrics using the [flask-prometheus-metrics](https://pypi.org/project/flask-prometheus-metrics/)

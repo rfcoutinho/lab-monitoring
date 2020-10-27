@@ -1,0 +1,4 @@
+flask
+prometheus-flask-exporter
+prometheus_client
+flask_prometheus_metrics
