@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-set -ex
+set -e
 
 threads=4
 requests=20000
 
 function send_request() {
     for ((i = 0; i <= $requests; i++)); do
-        curl -k http://localhost:5000/500 &> /dev/null
+        curl -k http://localhost:8080/hello &> /dev/null
     done
 }
 

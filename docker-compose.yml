@@ -72,21 +72,21 @@ services:
       restart_policy:
         condition: on-failure
 
-  cadvisor:
-    image: google/cadvisor
-    volumes:
-      - /:/rootfs:ro
-      - /var/run:/var/run:rw
-      - /sys:/sys:ro
-      - /var/lib/docker/:/var/lib/docker:ro
-    ports:
-      - 8080:8080
-    networks:
-      - monitor-net
-    deploy:
-      mode: global
-      restart_policy:
-        condition: on-failure
+  # cadvisor:
+  #   image: google/cadvisor
+  #   volumes:
+  #     - /:/rootfs:ro
+  #     - /var/run:/var/run:rw
+  #     - /sys:/sys:ro
+  #     - /var/lib/docker/:/var/lib/docker:ro
+  #   ports:
+  #     - 8080:8080
+  #   networks:
+  #     - monitor-net
+  #   deploy:
+  #     mode: global
+  #     restart_policy:
+  #       condition: on-failure
 
   grafana:
     image: grafana/grafana
@@ -115,6 +115,21 @@ services:
       - prometheus
     ports:
       - 5000:5000
+    networks:
+      - monitor-net
+    deploy:
+      placement:
+        constraints:
+          - node.role==manager
+      restart_policy:
+        condition: on-failure
+
+  springboot:
+    image: java/hello-app
+    depends_on:
+      - prometheus
+    ports:
+      - 8080:8080
     networks:
       - monitor-net
     deploy:
