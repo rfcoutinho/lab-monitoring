@@ -12,7 +12,7 @@
       }
     ]
   },
-  "description": "Dashboard for official Prometheus Python Client's metrics",
+  "description": "Dashboard for official prometheus Python Client's metrics",
   "editable": true,
   "gnetId": 9688,
   "graphTooltip": 0,
@@ -886,7 +886,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#d44a3a"
       ],
-      "datasource": "Prometheus",
+      "datasource": "prometheus",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1300,8 +1300,8 @@
       {
         "current": {
           "selected": false,
-          "text": "Prometheus",
-          "value": "Prometheus"
+          "text": "prometheus",
+          "value": "prometheus"
         },
         "hide": 0,
         "includeAll": false,

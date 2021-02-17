@@ -12,7 +12,7 @@ deleteDatasources:
 # what's available in the database
 datasources:
   # <string, required> name of the datasource. Required
-  - name: Prometheus
+  - name: prometheus
     # <string, required> datasource type. Required
     type: prometheus
     # <string, required> access mode. proxy or direct (Server or Browser in the UI). Required

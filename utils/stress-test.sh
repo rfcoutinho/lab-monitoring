@@ -2,7 +2,7 @@
 
 set -e
 
-threads=4
+threads=1
 requests=20000
 
 function send_request() {
